@@ -1,0 +1,69 @@
+<h1 class="{CATEGORY_COLOR}">{HEADING}</h1>
+<div class="hidden">
+<!-- BEGIN DROPDOWN -->
+{LC_SELECT_CATEGORY}<br>
+<form action="{FRM_URL}" method="post">
+  <select name="frm_category">
+    <!-- BEGIN SELECT -->
+    <option value="{FRM_CATID}" label="{FRM_LABEL}"{SELECTED}>{FRM_LABEL}
+    <!-- END SELECT -->
+  </select>
+  <input type="submit" name="frm_submit">
+
+</form>
+<!-- END DROPDOWN -->
+</div>
+
+<table>
+
+<tr valign="top">
+<!-- <td valign="top">
+        {CATEGORIES}
+</td> -->
+<td valign="top" width="100%">
+<!-- BEGIN PRODUCTS -->
+<table class="overview" width="100%">
+<tr class="overview">
+<th colspan="2">{LC_PRODUCTS}&nbsp;</th>
+</tr>
+<!-- BEGIN PRODUCTBLOCK -->
+  <tr class="{CLASS}">
+    <td valign="top">{LAND}&nbsp;&nbsp;</td>
+    <td valign="top">{PRODUCT}&nbsp;</td>
+  </tr>
+<!-- END PRODUCTBLOCK -->
+</table>
+<!-- END PRODUCTS -->
+</td>
+<!-- BEGIN DETAILSBLOCK -->
+<td valign="top" width="50%">
+    <table class="overview">
+        <tr valign="top" class="overview">
+            <th colspan="2">Details&nbsp;</th>
+        </tr>
+        <tr valign="top" class="overview">
+            <td>{LC_NAME}&nbsp;</td>
+            <td>{NAME}&nbsp;</td>
+        </tr>
+        <tr valign="top" class="overviewalternate">
+            <td>{LC_MANUFACTURER}&nbsp;</td>
+            <td>{MANUFACTURER}&nbsp;</td>
+        </tr>
+        <tr valign="top" class="overview">
+            <td>{LC_RESELLER}&nbsp;</td>
+            <td>&nbsp;
+            </td>
+        </tr>
+        <!-- BEGIN INFOBLOCK -->
+        <tr valign="top" class="overviewalternate">
+            <td>{LC_INFO}&nbsp;</td>
+            <td>{INFO}&nbsp;</td>
+        </tr>
+        <!-- END INFOBLOCK -->
+    </table>
+
+</td>
+<!-- END DETAILSBLOCK -->
+{DETAILS}
+</tr>
+</table>

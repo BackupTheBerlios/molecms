@@ -1,0 +1,41 @@
+{FORMULARSTART}
+<table class="hinterlegt" border="0" cellpadding="5" cellspacing="0" align="center">
+<tr>
+	<td><strong>Suchbegriff</strong></td>
+	<td colspan="2">{SUCHFELD}</td>
+</tr>
+<tr>
+	<td><strong>Verknüpfung</strong></td>
+	<td>{SUCHE_UND}</td>
+	<td>{SUCHE_ODER}</td>
+</tr>
+<tr>
+	<td colspan="3" align="right">{GO}</td>
+</tr>
+</table>
+{FORMULARENDE}
+
+
+<!-- BEGIN RESULTSET -->
+<table width="600" border="0" cellspacing="5" cellpadding="5">
+<tr>
+        <td>{NUMRESULTS}</td>
+</tr>
+<!-- BEGIN ZEILE -->
+  <tr bgcolor="#eeeeee">
+    <td valign="top"><b>{UEBERSCHRIFT}</b></td>
+  </tr>
+  <tr>
+    <td valign="top">{ABSTRACT}</td>
+  </tr>
+  <tr>
+    <td>{RELEASEDATE}</td></tr>
+  <tr>
+    <td>{TEXT}</td>
+  </tr>
+  <tr>
+    <td><hr></td>
+  </tr>
+<!-- END ZEILE -->
+</table>
+<!-- END RESULTSET -->

@@ -1,0 +1,14 @@
+<h1 class="{CATEGORY_COLOR}">{HEADING}</h1>
+{LC_SELECT_CATEGORY}<br>
+<form action="{FRM_URL}" method="get">
+    {SELECT}
+    <input type="hidden" name="module" value="compound">
+    <input type="hidden" name="action" value="browse">
+    <input type="submit" name="frm_submit" value="Go">
+
+</form>
+<!-- BEGIN COMPOUND -->
+<h2 class="{CATEGORY_COLOR}">{LC_SPECIFICATIONS}</h2>
+{TABLE}
+
+<!-- END COMPOUND -->
