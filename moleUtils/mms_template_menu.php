@@ -1,23 +1,93 @@
 <?php
+/* vim: set expandtab tabstop=4 shiftwidth=4: */
+//
+// +----------------------------------------------------------------------+
+// | MoleCMS                                                              |
+// +----------------------------------------------------------------------+
+// | Copyright (c) 2000-2002 MoleManMedia Tim Franz                       |
+// +----------------------------------------------------------------------+
+// | Authors: Tim Franz <tfranz@moleman.de>                               |
+// +----------------------------------------------------------------------+
+//
+// $Id: mms_template_menu.php,v 1.2 2002/09/03 16:07:49 moleman Exp $
+
 include_once("HTML/Menu.php");
 
 /**
- * Class mms_template_menu provides five different menu structures. it is based on menu3 by ulf wendel.
+ * Class mms_template_menu provides six different menu structures. it is based on menu3 by ulf wendel.
  * @access  public
  * @package navigation
+ * @author tfranz <tfranz@moleman.de>
 */
 
-class mms_template_menu extends HTML_menu {
-var $std_icon="icon_text.gif";
-var $std_folder="icon_folder.gif";
-var $std_empty="empty.gif";
-var $icon_dir="/pic/";
-var $menu_width="150";
-var $class="";
-var $keepEmpty=true;
-var $session;
-var $perm;
-var $aLevel=-1;
+class mms_template_menu extends HTML_menu
+{
+    var $std_icon="icon_text.gif";
+    var $std_folder="icon_folder.gif";
+    var $std_empty="empty.gif";
+    var $icon_dir="/pic/";
+    var $menu_width="150";
+    var $class="";
+    var $keepEmpty=true;
+    var $session;
+    var $perm;
+    var $aLevel=-1;
+    
+    
+    /** sets the default icons for each different icontype
+     * @author tfranz
+     * @param   array   $iconset the array containing the iconsnames for each icon
+     */
+    function setIcons($iconset)
+    {
+        $this->setIcon('empty',$iconset['empty']);
+        $this->setIcon('folder',$iconset['folder']);
+        $this->setIcon('node',$iconset['node']);
+    
+    } // end func setIcons
+    
+    
+    /** sets the icon for the specified node to the given icon
+    * @author tfranz <tfranz@moleman.de>
+    * @param    string  $icontype    the icon type to change
+    * @param    string  $icon    the url of the icon to set
+    */
+    
+    function setIcon($icontype,$icon)
+    {
+        $this->std_{$icontype}=$icon;
+    } // end func setIcon
+
+
+    /** sets the menuwidth to the given amount.
+    * Has only effect on vertical menus (Sitemap, tree)
+    * @param    string $width   the width the menu shall have
+    * @author   tfranz <tfranz@moleman.de>
+    */
+    function setMenuWidth($width)
+    {
+        $this->menu_width=$width;
+    } // end func setMenuWidth
+
+
+    /** sets a stylesheet for output.
+    * @param    string  $css    the stylesheet class to use
+    * @author   tfranz <tfranz@moleman.de>
+    */
+    function setStyleClass($css)
+    {
+        $this->class=$class;
+    } // end func setStyleClass
+
+
+    /** Defines, whether a a node which has a number of 0 children shall be shown
+    * @param    boolean $bool   show nodes with no children?
+    * @author   tfranz <tfranz@moleman.de>
+    */
+    function setEmptyNodes($bool)
+    {
+        $this->keepEmpty=$bool;
+    } // end func setemptyNodes
 
 
     function getStart() {
@@ -213,56 +283,39 @@ var $aLevel=-1;
 
     }
 
-    function getEntryYahoo(&$node,$level,$item_type){
-    $html="";
-    $indent="";
-    if($this->shownumchildren)
-            $menuitemtitle=$node["title"] . ' ' .$node['numchildren'];
-        else
-            $menuitemtitle=$node["title"];
-    switch ($item_type) {
+
+    
+    /** generates a yahoo-like menu, i.e. shows just the direct children of the active node
+    */
+    function getEntryYahoo(&$node,$level,$item_type)
+    {
+        $html="";
+        $indent="";
+        if($this->shownumchildren)
+                $menuitemtitle=$node["title"] . ' ' .$node['numchildren'];
+            else
+                $menuitemtitle=$node["title"];
+        switch ($item_type) {
             case 0:
                 // plain menu item
 
                 if($level==$this->aLevel+1){
-                $html .= sprintf('%s%s%s&nbsp;%s</a>&nbsp;%s',
-                                    $indent,
-                                    $this->get_url($node),
-                                    $this->get_icon($node),
-                                    $menuitemtitle,
-                                    $space
-
-                             );
-                $html.="<br>";
+                    $html .= sprintf('%s%s%s&nbsp;%s</a>&nbsp;%s',
+                                        $indent,
+                                        $this->get_url($node),
+                                        $this->get_icon($node),
+                                        $menuitemtitle,
+                                        $space
+    
+                                 );
+                    $html.="<br>";
                 }
                 break;
 
-            case 1:
-                // selected (active) menu item
-               /* $html .= sprintf('%s%s&nbsp;%s&nbsp;%s',
-                                   $indent,
-                                   $this->get_icon($node),
-                                   $menuitemtitle,
-                                   $space
-                                );
-                break;*/
-/*
-            case 2:
-                // part of the path to the selected (active) menu item
-                $html .= sprintf('%s%s%s&nbsp;%s</a>&nbsp;%s%s',
+        }
+        return $html;
 
-                                    ("urhere" == $this->menu_type) ? "" : $indent,
-                                    $this->get_url($node),
-                                    $this->get_icon($node),
-                                    $menuitemtitle,
-                                    ("urhere" == $this->menu_type) ? "&nbsp;&gt;&nbsp;" : "",
-                                    $space
-                                );
-                break;*/
-            }
-    return $html;
-
-    }
+    } // end func getEntryYahoo
 
 
 

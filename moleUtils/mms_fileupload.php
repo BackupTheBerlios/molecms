@@ -1,4 +1,17 @@
 <?php
+/* vim: set expandtab tabstop=4 shiftwidth=4: */
+//
+// +----------------------------------------------------------------------+
+// | MoleCMS                                                              |
+// +----------------------------------------------------------------------+
+// | Copyright (c) 2000-2002 MoleManMedia Tim Franz                       |
+// +----------------------------------------------------------------------+
+// | Authors: Tim Franz <tfranz@moleman.de>                               |
+// +----------------------------------------------------------------------+
+//
+// $Id: mms_fileupload.php,v 1.2 2002/09/03 16:07:49 moleman Exp $
+
+//DEPRECATED!! DON'T USE
 
 /**
  * Class fileupload provides a simple interface for uploading files onto the webserver.

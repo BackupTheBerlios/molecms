@@ -1,31 +1,22 @@
 <?php
+/* vim: set expandtab tabstop=4 shiftwidth=4: */
 //
 // +----------------------------------------------------------------------+
-// | PHP Version 4                                                        |
+// | MoleCMS                                                              |
 // +----------------------------------------------------------------------+
-// | Copyright (c) 1997-2002 The PHP Group                                |
+// | Copyright (c) 2000-2002 MoleManMedia Tim Franz                       |
 // +----------------------------------------------------------------------+
-// | This source file is subject to version 2.02 of the PHP license,      |
-// | that is bundled with this package in the file LICENSE, and is        |
-// | available at through the world-wide-web at                           |
-// | http://www.php.net/license/2_02.txt.                                 |
-// | If you did not receive a copy of the PHP license and are unable to   |
-// | obtain it through the world-wide-web, please send a note to          |
-// | license@php.net so we can mail you a copy immediately.               |
-// +----------------------------------------------------------------------+
-// | Authors: Tim Franz <tfranz@mmoleman.de>                              |
+// | Authors: Tim Franz <tfranz@moleman.de>                               |
 // +----------------------------------------------------------------------+
 //
-// $Id: Menu_Browser_DB.php,v 1.2 2002/08/07 09:02:44 moleman Exp $
+// $Id: Menu_Browser_DB.php,v 1.3 2002/09/03 16:07:49 moleman Exp $
+
 
 /**
-* Simple filesystem browser that can be used to generated menu (3) hashes based on the directory structure.
+* Simple table browser that can be used to generated menu (3) hashes based on the directory structure.
 *
-* Together with menu (3) and the (userland) cache you can use this
-* browser to generate simple fusebox like applications / content systems.
-*
-* Let the menubrowser scan your document root and generate a menu (3) structure
-* hash which maps the directory structure, pass it to menu's setMethod() and optionally
+* Let the menubrowser scan your database tabble and generate a menu (3) structure
+* hash, pass it to menu's setMethod() and optionally
 * wrap the cache around all this to save script runs. If you do so, it looks
 * like this:
 *
@@ -41,11 +32,6 @@
 * // output the sitemap
 * $menu->show('sitemap');
 *
-* Now, use e.g. simple XML files to store your content and additional menu informations
-* (title!). Subclass exploreFile() depending on your file format.
-*
-* @author   Ulf Wendel <ulf.wendel@phpdoc.de>
-* @version  $Id: Menu_Browser_DB.php,v 1.2 2002/08/07 09:02:44 moleman Exp $
 */
 include_once 'DB.php';
 

@@ -1,5 +1,5 @@
 <?php
-
+// deprecated!!!
 # version 1.1-1, 2001/08/24 tf
 
 # mms_template_table.inc
