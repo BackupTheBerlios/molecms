@@ -13,10 +13,10 @@
 // | obtain it through the world-wide-web, please send a note to          |
 // | license@php.net so we can mail you a copy immediately.               |
 // +----------------------------------------------------------------------+
-// | Authors: Ulf Wendel <ulf.wendel@phpdoc.de>                           |
+// | Authors: Tim Franz <tfranz@mmoleman.de>                              |
 // +----------------------------------------------------------------------+
 //
-// $Id: Menu_Browser_DB.php,v 1.1 2002/08/07 08:48:20 moleman Exp $
+// $Id: Menu_Browser_DB.php,v 1.2 2002/08/07 09:02:44 moleman Exp $
 
 /**
 * Simple filesystem browser that can be used to generated menu (3) hashes based on the directory structure.
@@ -45,7 +45,7 @@
 * (title!). Subclass exploreFile() depending on your file format.
 *
 * @author   Ulf Wendel <ulf.wendel@phpdoc.de>
-* @version  $Id: Menu_Browser_DB.php,v 1.1 2002/08/07 08:48:20 moleman Exp $
+* @version  $Id: Menu_Browser_DB.php,v 1.2 2002/08/07 09:02:44 moleman Exp $
 */
 include_once 'DB.php';
 
