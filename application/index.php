@@ -9,7 +9,7 @@
 // | Authors: Tim Franz <tfranz@moleman.de>                               |
 // +----------------------------------------------------------------------+
 //
-// $Id: index.php,v 1.1 2002/08/07 09:52:31 moleman Exp $
+// $Id: index.php,v 1.2 2002/09/03 16:06:58 moleman Exp $
 
 //error_reporting(E_ALL & ~E_NOTICE);
 //error_reporting(E_ALL);
@@ -51,11 +51,11 @@ require_once 'PEAR.php';
 
 require_once 'HTML/Template/ITX.php';
 require_once 'DB.php';
-require_once 'Config/Config.php';
+require_once 'Config.php';
 
 //require_once "admin/tree_helper.php";
 require_once 'HTTP.php';
-require_once 'DB_Pager/Pager.php';
+require_once 'DB/Pager.php';
 
 require_once 'Menu_Browser_DB.php';
 require_once "mms_template_menu.php";
